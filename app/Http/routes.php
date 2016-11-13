@@ -76,3 +76,24 @@ Route::get('/', [
        'uses' => 'ProfileController@postEdit',
        'middleware' => ['auth']
    ]);
+
+   /**
+    * Friends
+    */
+    Route::get('/friends', [
+        'uses' => 'FriendController@getIndex',
+        'as' => 'friend.index',
+        'middleware' => ['auth']
+    ]);
+
+    Route::get('/friends/add/{username}', [
+        'uses' => 'FriendController@getAdd',
+        'as' => 'friend.add',
+        'middleware' => ['auth']
+    ]);
+
+    Route::get('/friends/accept/{username}', [
+        'uses' => 'FriendController@getAccept',
+        'as' => 'friend.accept',
+        'middleware' => ['auth']
+    ]);
