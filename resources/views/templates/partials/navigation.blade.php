@@ -1,7 +1,7 @@
 <nav class="navbar navbar-default" role="navigation">
     <div class="container">
         <div class="navbar-header">
-            <a href="#" class="navbar-brand">Chatty</a>
+            <a href="{{ route('home') }}" class="navbar-brand">Chatty</a>
         </div>
         <div class="collapse navbar-collapse">
             @if(Auth::check())
@@ -9,7 +9,7 @@
                     <li><a href="#">Timeline</a></li>
                     <li><a href="#">Friends</a></li>
                 </ul>
-                <form action="" class="navbar-form navbar-left" role="search">
+                <form action="{{ route('search.results') }}" class="navbar-form navbar-left" role="search">
                     <div class="form-group">
                         <input type="text" class="form-control" name="query" placeholder="Find people">
                     </div>
