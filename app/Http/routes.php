@@ -1,5 +1,7 @@
 <?php
 
+use Chatty\Http\Controllers;
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -11,6 +13,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [
+    'uses' => 'HomeController@index',
+    'as' => 'home'
+]);
