@@ -19,6 +19,11 @@ class Status extends Model
 
     public function scopeNotReply($query)
     {
-        return $query->whereNull('parent_id');
+        return $query->where('parent_id', 0);
+    }
+
+    public function replies()
+    {
+        return $this->hasMany('Chatty\Models\Status', 'parent_id');
     }
 }
